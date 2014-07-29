@@ -15,8 +15,8 @@ It just loads photos from the specified trovebox account x days ago from today (
 
 ### Usage
 
-Edit the openphoto.js line in index.html
-    
+Edit the openphoto.js line
+
     <script src="js/OpenPhoto.js" data-site="http://photo.example.com"></script>
 
 and change data-site to your trovebox installation.
@@ -29,3 +29,6 @@ If you want to edit the template you have to compile it using hulk (hogan.js)
 
     hulk photos.mustache > ../js/templates.js (Or run the bash script from this dir)
 
+### Screenshots
+<img src="https://raw.githubusercontent.com/endast/Throwback-Trovebox/master/example-images/1.png" style="width:400px; margin:auto;">
+<img src="https://raw.githubusercontent.com/endast/Throwback-Trovebox/master/example-images/2.png" style="width:400px; margin:auto;">
