@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Throwback Trovebox</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Throwback Trovebox</h1>
+    <h2>One year ago</h2>
+    <div id="year-images"></div>
+
+    <h2>One month ago</h2>
+    <div id="month-images"></div>
+
+    <h2>One week ago</h2>
+    <div id="week-images"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://twitter.github.com/hogan.js/builds/3.0.1/hogan-3.0.1.js"></script>    
+    <script src="js/templates.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/OpenPhoto.js" data-site="http://photo.example.com"></script>
+    <script>
+
+  function render(response, target) {
+      var compiledTemplate = templates['photos'];
+      var renderedTemplate = compiledTemplate.render(response);
+
+      if(renderedTemplate === ""){
+        renderedTemplate = "<h3> No images from this day :(</h3>"
+      }
+
+      $("#"+target).html(renderedTemplate);
+    }
+  </script>
+  <script>
+
+    function stringFromDate(date) {
+      var temp = date;
+      var dateStr = temp.getFullYear().toString() + '-' +
+                    (temp.getMonth()+1).toString() + '-' +
+                    temp.getDate().toString()
+  
+      return dateStr;
+    }
+
+    function dateDaysAgo(date,daysAgo){
+      date.setDate(date.getDate() - daysAgo);
+      return date
+    }
+
+    function urlForDaysAgo(daysAgo,pageSize){
+      return '/photos/list.json?returnSizes=200x200xCR,600x600&pageSize='+pageSize+'&takenAfter='+stringFromDate(dateDaysAgo(new Date(),daysAgo+1))+'&takenBefore='+stringFromDate(dateDaysAgo(new Date(),daysAgo))
+    }
+
+    function renderYear(response){
+      render(response, "year-images")
+    }
+
+    function renderMonth(response){
+      render(response, "month-images")
+    }
+
+    function renderWeek(response){
+      render(response, "week-images")
+    }
+
+    var maxImages = 3
+
+    OpenPhoto.Api.load(urlForDaysAgo(365, maxImages), renderYear);
+    OpenPhoto.Api.load(urlForDaysAgo(30, maxImages), renderMonth);
+    OpenPhoto.Api.load(urlForDaysAgo(7, maxImages), renderWeek);
+
+  </script>
+
+  </body>
+</html>
