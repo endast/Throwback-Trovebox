@@ -1,4 +1,4 @@
-#Throwback Trovebox - a trovebox timemachine
+#Throwback Trovebox - a simple trovebox timemachine
 
 
 ### What is this?
