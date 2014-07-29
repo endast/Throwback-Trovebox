@@ -11,7 +11,7 @@ It just loads photos from the specified trovebox account x days ago from today (
 ### TODO
 * Add ability to look for photos if none are found, for example if no photos is found 1 year ago we could search 1year ago +-1 one day etc
 * Add gui to discover photos (so you could show photos from x weeks/years/days ago without editing the source)
-
+* Show more photos from the selected date
 
 ### Usage
 
