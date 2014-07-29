@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Throwback-trovebox by endast</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Throwback-trovebox</h1>
+        <p>A Trovebox timemachine</p>
+
+        <p class="view"><a href="https://github.com/endast/Throwback-Trovebox">View the Project on GitHub <small>endast/Throwback-Trovebox</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/endast/Throwback-Trovebox/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/endast/Throwback-Trovebox/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/endast/Throwback-Trovebox">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="throwback-trovebox---a-trovebox-timemachine" class="anchor" href="#throwback-trovebox---a-trovebox-timemachine"><span class="octicon octicon-link"></span></a>Throwback Trovebox - a trovebox timemachine</h1>
+
+<h3>
+<a name="what-is-this" class="anchor" href="#what-is-this"><span class="octicon octicon-link"></span></a>What is this?</h3>
+
+<p>I loved everpix and was really sad to see it go. And after switching to Trovebox i missed the feature that showed you photos from that day, a year, month, week ago etc. So i hacked togheter this simple page to recreate a simple version of that feature. </p>
+
+<p>It just loads photos from the specified trovebox account x days ago from today (default a year, a month and a week). Nothing fancy for now :)</p>
+
+<h3>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h3>
+
+<ul>
+<li>Add ability to look for photos if none are found, for example if no photos is found 1 year ago we could search 1year ago +-1 one day etc</li>
+<li>Add gui to discover photos (so you could show photos from x weeks/years/days ago without editing the source)</li>
+</ul><h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Edit the openphoto.js line</p>
+
+<pre><code>&lt;script src="js/OpenPhoto.js" data-site="http://photo.example.com"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>and change data-site to your trovebox installation.</p>
+
+<p>If you want to edit the template you have to compile it using hulk (hogan.js)</p>
+
+<pre><code>npm install hogan.js -g
+
+cd /path/to/download/Throwback_Trovebox/templates
+
+hulk photos.mustache &gt; ../js/templates.js (Or run the bash script from this dir)
+</code></pre>
+
+<h3>
+<a name="screenshots" class="anchor" href="#screenshots"><span class="octicon octicon-link"></span></a>Screenshots</h3>
+
+<p><img src="https://raw.githubusercontent.com/endast/Throwback-Trovebox/master/example-images/1.png"><img src="https://raw.githubusercontent.com/endast/Throwback-Trovebox/master/example-images/2.png"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/endast">endast</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
