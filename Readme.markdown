@@ -16,6 +16,7 @@ It just loads photos from the specified trovebox account x days ago from today (
 ### Usage
 
 Edit the openphoto.js line in index.html
+    
     <script src="js/OpenPhoto.js" data-site="http://photo.example.com"></script>
 
 and change data-site to your trovebox installation.
